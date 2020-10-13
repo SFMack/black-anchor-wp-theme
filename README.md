@@ -1,4 +1,4 @@
-# Black Anchor
+# Black Anchor (Wordpress)
 Black Anchor is a wordpress theme built from scratch. The purpose of this project was to understand what it takes to develop a custom wordpress website based on a static website built using HTML and CSS
 
 ## Functionality
