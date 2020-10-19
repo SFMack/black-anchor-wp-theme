@@ -1,7 +1,5 @@
 <?php get_header(); ?>
 
-    <!-- Main -->
-    <main>
         <!-- Header (linked to all blogs) -->
         <a href="<?php echo site_url('/blog'); ?>">
             <h2 class="page-heading">All Blogs</h2>

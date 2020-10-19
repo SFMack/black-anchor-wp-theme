@@ -1,7 +1,5 @@
 <?php get_header(); ?>
 
-    <!-- Main -->
-    <main>
         <!-- Header (linked to all blogs) -->
         <a href="<?php echo site_url('/projects'); ?>">
             <h2 class="page-heading"><?php the_archive_title(); ?></h2>

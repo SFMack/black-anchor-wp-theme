@@ -41,7 +41,7 @@ a:hover {
 input,
 textarea {
     height: 32px;
-    padding: 0 16px;
+    padding: 8px 16px;
     font-family: 'Roboto Condensed', sans-serif;
     border: none;
     box-shadow: inset 8px 3px 18px -4px rgba(0,0,0,0.4);
@@ -86,7 +86,7 @@ textarea:focus {
 }
 
 #searchbox input{
-    height: 48px;
+    height: 32px; /* may need to change to 48px*/
     width: 100%;
 }
 
@@ -425,10 +425,92 @@ footer #social-media-footer ul li:hover a .fa-facebook {
     padding: 8px;
 }
 
+.comment-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-form input,
+.comment-form textarea {
+    margin-bottom: 16px;
+}
+
+.comment-note {
+    text-align: center;
+    color: red;
+}
+
+#comments-section textarea {
+    height: 160px;
+}
+
+.form-submit .submit,
+.wpcf7 .wpcf7-submit {
+    background: white;
+    font-weight: bold;
+    width: 100%;
+    padding: 8px;
+    border: 2px solid black;
+    height: 48px;
+    cursor: pointer;
+    transition: 0.4s;
+    box-shadow: initial;
+}
+
+.form-submit .submit:hover,
+.wpcf7 .wpcf7-submit:hover {
+    background: red;
+    color: white;
+}
+
+.comment-reply-title {
+    text-align: center;
+}
+
+/* Comments List */
+.comments {
+    margin-top: 24px;
+    border-top: 2px solid #eee;
+}
+
+.all-comments li {
+    list-style: none;
+    margin-bottom: 16px;
+}
+
+.all-comments .comments-meta {
+    background: #555;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.all-comments .vcard {
+    display: flex;
+    align-items: center;
+    margin-right: 8px;
+}
+
+.all-comments .photo {
+    border-right: 8px solid transparent;
+    border-bottom: 4px solid transparent;
+}
+
+.all-comments .says {
+    display: none;
+}
+
+.all-comments .reply {
+    font-weight: bold;
+}
+
+.all-comments .children {
+    margin-top: 16px;
+}
+
+
 /* 
-
 Media Queries 
-
 */
 
 @media (max-width: 900px) {
