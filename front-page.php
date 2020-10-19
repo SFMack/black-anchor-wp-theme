@@ -8,91 +8,92 @@
     <!-- Main -->
     <main>
         <!-- Header (linked to all blogs) -->
-        <a href="blogslist.html">
+        <a href="<?php echo site_url('/blog'); ?>">
             <h2 class="section-heading">All Blogs</h2>
         </a>
 
         <!-- Section -->
         <section>
+
+        <?php 
+
+            $args = array(
+                'post_type' => 'post',
+                'posts_per_page' => 2,
+            );
+
+            $blogposts = new WP_Query($args);
+
+            while($blogposts->have_posts()) {
+                $blogposts->the_post();
+            
+
+        ?>
+
             <!-- card -->
             <div class="card">
                 <div class="card-image">
-                    <a href="blogpost.html">
-                        <img src="img/image1.jpg" alt="card image">
+                    <a href="<?php the_permalink(); ?>">
+                        <img src="<?php echo get_the_post_thumbnail_url(get_the_ID()); ?>" alt="card image">
                     </a>
                 </div>
 
                 <div class="card-description">
-                    <a href="blogpost.html">
-                        <h3>The Blog Title Here</h3>
+                    <a href="<?php the_permalink(); ?>">
+                        <h3><?php the_title(); ?></h3>
                     </a>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed non velit cumque minima consectetur. Expedita reprehenderit placeat illo commodi mollitia id, impedit cupiditate adipisci nobis, quas officiis excepturi, eos iste?
+                        <?php echo wp_trim_words(get_the_excerpt(), 30); ?>
                     </p>
-                    <a href="#" class="btn-readmore">Read More</a>
-                </div>
-            </div> 
-            <!-- card -->
-            <div class="card">
-                <div class="card-image">
-                    <a href="blogpost.html">
-                        <img src="img/image2.jpg" alt="card image">
-                    </a>
-                </div>
-
-                <div class="card-description">
-                    <a href="#">
-                        <h3>The Blog Title Here</h3>
-                    </a>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed non velit cumque minima consectetur. Expedita reprehenderit placeat illo commodi mollitia id, impedit cupiditate adipisci nobis, quas officiis excepturi, eos iste?
-                    </p>
-                    <a href="blogpost.html" class="btn-readmore">Read More</a>
+                    <a href="<?php the_permalink(); ?>" class="btn-readmore">Read More</a>
                 </div>
             </div>
+
+            <?php } wp_reset_query(); ?>
+
         </section>
 
         <h2 class="section-heading">All Projects</h2>
 
         <!-- Section -->
         <section>
-            <!-- card -->
-            <div class="card">
-                <div class="card-image">
-                    <a href="#">
-                        <img src="img/image3.jpg" alt="card image">
-                    </a>
-                </div>
+        <?php 
 
-                <div class="card-description">
-                    <a href="#">
-                        <h3>The Project Title Here</h3>
-                    </a>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed non velit cumque minima consectetur. Expedita reprehenderit placeat illo commodi mollitia id, impedit cupiditate adipisci nobis, quas officiis excepturi, eos iste ?
-                    </p>
-                    <a href="#" class="btn-readmore">Read More</a>
-                </div>
-            </div>
-            <!-- card -->
-            <div class="card">
-                <div class="card-image">
-                    <a href="#">
-                        <img src="img/image4.jpg" alt="card image">
-                    </a>
-                </div>
+$args = array(
+    'post_type' => 'project',
+    'posts_per_page' => 2,
+);
 
-                <div class="card-description">
-                    <a href="#">
-                        <h3>The Project Title Here</h3>
-                    </a>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed non velit cumque minima consectetur. Expedita reprehenderit placeat illo commodi mollitia id, impedit cupiditate adipisci nobis, quas officiis excepturi, eos iste?
-                    </p>
-                    <a href="#" class="btn-readmore">Read More</a>
-                </div>
-            </div>
-        </section>
+$projects = new WP_Query($args);
+
+while($projects->have_posts()) {
+    $projects->the_post();
+
+
+?>
+
+<!-- card -->
+<div class="card">
+    <div class="card-image">
+        <a href="<?php the_permalink(); ?>">
+            <img src="<?php echo get_the_post_thumbnail_url(get_the_ID()); ?>" alt="card image">
+        </a>
+    </div>
+
+    <div class="card-description">
+        <a href="<?php the_permalink(); ?>">
+            <h3><?php the_title(); ?></h3>
+        </a>
+        <p>
+            <?php echo wp_trim_words(get_the_excerpt(), 30); ?>
+        </p>
+        <a href="<?php the_permalink(); ?>" class="btn-readmore">Read More</a>
+    </div>
+</div>
+
+<?php } wp_reset_query(); ?>
+
+</section>
 
         <h2 class="section-heading">Source Code</h2>
         <section id="section-source">
