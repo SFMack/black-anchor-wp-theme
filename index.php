@@ -1,9 +1,8 @@
 <?php get_header(); ?>
 
-        <!-- Header (linked to all blogs) -->
-        <a href="<?php echo site_url('/blog'); ?>">
+
             <h2 class="page-heading">All Blogs</h2>
-        </a>
+        
 
         <!-- Section -->
         <section>

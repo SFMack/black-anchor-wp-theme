@@ -16,16 +16,16 @@
             <li><a href="<?php echo site_url('/blog'); ?>">Blog</a></li>
             <li><a href="<?php echo site_url('/projects'); ?>">Projects</a></li>
             <li><a href="<?php echo site_url('/about'); ?>">About</a></li>
-            <li>
-                <input type="text" placeholder="Search Here">
-            </li>
+            <div class="searchbox-slide-menu">
+                <?php get_search_form(); ?>
+            </div>
         </ul>
     </div>
 
     <!-- Navigation -->
     <nav>
         <div id="logo-image">
-            <a href="#">
+            <a href="<?php echo site_url(''); ?>">
                 <img src="img/logo.png" alt="black anchor logo">
             </a>
         </div>
@@ -49,7 +49,7 @@
 
     <!-- Search Box -->
     <div id="searchbox">
-        <input type="text" placeholder="Search Here">
+        <?php get_search_form(); ?>
     </div>
 
     <?php if(!is_front_page()) { ?>

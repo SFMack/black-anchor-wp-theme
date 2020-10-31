@@ -3,12 +3,12 @@
                 <h3>Quick Links</h3>
                 <p>
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Blogs</a></li>
-                        <li><a href="#">Projects</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="<?php echo site_url(''); ?>">Home</a></li>
+                        <li><a href="<?php echo site_url('/about'); ?>">About</a></li>
+                        <li><a href="<?php echo site_url('/privacy-policy'); ?>">Privacy Policy</a></li>
+                        <li><a href="<?php echo site_url('/blog'); ?>">Blogs</a></li>
+                        <li><a href="<?php echo site_url('/projects'); ?>">Projects</a></li>
+                        <li><a href="<?php echo site_url('/contact'); ?>">Contact</a></li>
                     </ul>
                 </p>
             </div>
